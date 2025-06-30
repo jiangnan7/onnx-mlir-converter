@@ -1,3 +1,6 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+<p align="center"><img width="50%" src="docs/logo/onnx-mlir-1280x640.png" /></p>
+
 # onnx-mlir-converter
 
 A fork of [onnx-mlir](https://github.com/onnx/onnx-mlir) focused on lowering selected **ONNX dialect** ops to the MLIR **Linalg/Tensor/Arith dialect**.
