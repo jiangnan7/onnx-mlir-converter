@@ -7,14 +7,34 @@ A fork of [onnx-mlir](https://github.com/onnx/onnx-mlir) focused on lowering sel
 
 ## Currently Supported Lowerings
 
-| ONNX Dialect Op | Lowered to Linalg/Tensor/Arith |
-| :-------------: | :---------------: |
-|    onnx.Gemm    |         ✅         |
-|   onnx.MatMul   |         ✅         |
-|  onnx.Constant  |         ✅         |
-|   onnx.Reshape  |         ✅         |
-|   onnx.Squeeze  |         ✅         |
-|  onnx.Transpose |         ✅         |
+### Math Ops
+| ONNX Dialect Op |  Lowered to  Linalg/Tensor/Arith|
+| :-------------: | :----------: |
+|   `ONNXGemmOp`   | ✅ |
+|  `ONNXMatMulOp`  | ✅ |
+|  `ONNXClipOp`    | ✅ |
+|  `ONNXReluOp`    | ✅ |
+|  `ONNXAddOp`     | ✅ |
+|  `ONNXSubOp`     | ✅ |
+|  `ONNXSigmoidOp` | ✅ |
+
+
+### Tensor Ops
+|  ONNX Dialect Op |   Lowered to Linalg/Tensor/Arith  |
+| :--------------: | :----------: |
+|  `ONNXConstantOp` | ✅ |
+|  `ONNXReshapeOp`  | ✅ |
+|  `ONNXSqueezeOp`  | ✅ |
+|  `ONNXTransposeOp`| ✅ |
+|  `ONNXSliceOp`    | ✅ |
+|  `ONNXSplitOp`    | ✅ |
+
+### NN Ops
+|  ONNX Dialect Op |   Lowered to Linalg/Tensor/Arith  |
+| :--------------: | :----------: |
+|  `ONNXAveragePoolOp` | ✅ |
+|  `ONNXMaxPoolSingleOutOp`  | ✅ |
+
 
 More ops will be added in future releases.
 
