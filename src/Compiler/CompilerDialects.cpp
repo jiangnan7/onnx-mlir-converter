@@ -36,6 +36,8 @@ DialectRegistry registerDialects(ArrayRef<accel::Accelerator::Kind> accels) {
   registry.insert<ONNXDialect>();
   registry.insert<KrnlDialect>();
   registry.insert<cf::ControlFlowDialect>();
+  registry.insert<tensor::TensorDialect>();
+  
   registerOpenMPDialectTranslation(registry);
   mlir::memref::registerRuntimeVerifiableOpInterfaceExternalModels(registry);
 

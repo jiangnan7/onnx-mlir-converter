@@ -27,6 +27,7 @@
 #include "mlir/InitAllPasses.h"
 #include "mlir/Pass/PassRegistry.h"
 #include "src/Pass/Passes.hpp"
+#include "converter/src/Pass/Passes.hpp"
 
 using namespace mlir;
 
@@ -132,6 +133,10 @@ void registerOMPasses(int optLevel) {
 
   mlir::registerPass([]() -> std::unique_ptr<mlir::Pass> {
     return createConvertONNXToTOSAPass();
+  });
+  //Our pass
+  mlir::registerPass([]() -> std::unique_ptr<mlir::Pass> {
+    return createConvertONNXToLinalgPass();
   });
 
 #ifdef ONNX_MLIR_ENABLE_STABLEHLO
